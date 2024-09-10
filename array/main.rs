@@ -43,4 +43,10 @@ fn main() {
             println!("{} is odd.", element);
         }
     }
+    let max_element = ar_2.iter().max();
+
+    match max_element {
+        Some(&max) => println!("Max element: {}", max),
+        None => println!("No max element."),
+    }
 }
