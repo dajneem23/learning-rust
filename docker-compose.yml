@@ -1,0 +1,18 @@
+version: "3.9"
+name: pg-svcs
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - 5435:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=ppuser
+      - POSTGRES_USER=ppuser
+      - POSTGRES_DB=ppsvcsdb
+    networks:
+      - pg-svcs-net
+networks:
+  pg-svcs-net:
+    driver: bridge
