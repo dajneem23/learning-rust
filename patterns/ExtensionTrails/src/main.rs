@@ -1,11 +1,13 @@
+std::hash::Hash
+std::collections::HashSet
 #![allow(unused)]
 
 pub trait IteratorExt: Iterator {
     fn unique(self) -> Vec<Self::Item>
     where
-        Self::Item: Eq + std::hash::Hash,
+        Self::Item: Eq + Hash,
     {
-        use std::collections::HashSet;
+        use HashSet;
         let mut seen = HashSet::new();
         self.filter(|item| seen.insert(item.clone())).collect()
     }
@@ -14,16 +16,16 @@ pub trait IteratorExt: Iterator {
 pub struct UniqueIterator<I>
 where
     I: Iterator,
-    I::Item: Eq + std::hash::Hash,
+    I::Item: Eq + Hash,
 {
-    seen: std::collections::HashSet<I::Item>,
+    seen: HashSet<I::Item>,
     iter: std::iter::Peekable<I>,
 }
 
 impl<I> Iterator for UniqueIterator<I>
 where
     I: Iterator,
-    I::Item: Eq + std::hash::Hash,
+    I::Item: Eq + Hash,
 {
     type Item = I::Item;
 
@@ -44,7 +46,7 @@ fn main() {
 
     let numbers = vec![1, 2, 2, 3, 4, 1, 5];
     let unique_numbers: Vec<_> = UniqueIterator {
-        seen: std::collections::HashSet::new(),
+        seen: HashSet::new(),
         iter: numbers.into_iter().peekable(),
     }
     .collect();

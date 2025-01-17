@@ -46,6 +46,10 @@ pub enum Error {
     KeyNotFound { message: String },
 
     ServerError { message: String },
+
+
+    // -- Other errors
+    TicketNotFound { message: String,id:u64 },
 }
 
 impl IntoResponse for Error {

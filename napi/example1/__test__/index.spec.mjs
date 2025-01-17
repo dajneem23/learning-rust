@@ -1,0 +1,10 @@
+// import test from 'ava'
+
+import { sum } from '../index.js'
+
+// test('sum from native', (t) => {
+//   t.is(sum(1, 2), 3)
+// })
+
+
+console.log(sum(1, 2))

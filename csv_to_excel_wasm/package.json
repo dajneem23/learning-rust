@@ -1,0 +1,15 @@
+{
+  "name": "csv_to_excel_wasm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "napi build --release",
+    "build:debug": "napi build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@napi-rs/cli": "2.18.4"
+  }
+}

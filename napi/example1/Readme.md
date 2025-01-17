@@ -1,0 +1,1 @@
+https://johns.codes/blog/exposing-a-rust-library-to-node-with-napirs
