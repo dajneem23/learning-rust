@@ -310,6 +310,8 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { sum } = nativeBinding
+const { sum, saveFile, csvToExcel } = nativeBinding
 
 module.exports.sum = sum
+module.exports.saveFile = saveFile
+module.exports.csvToExcel = csvToExcel

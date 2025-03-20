@@ -1,0 +1,7 @@
+[package]
+name = "csv_to_excel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rust_xlsxwriter = "0.80.0"
