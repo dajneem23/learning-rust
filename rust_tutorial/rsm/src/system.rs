@@ -59,6 +59,7 @@ mod tests {
         system.inc_nonce(ben);
         system.inc_nonce(ben);
         assert_eq!(system.nonce(ben), 3);
+        assert_eq!(system.nonce(&String::from("alice")), 0);
     }
     #[test]
     fn test_block() {
@@ -69,4 +70,5 @@ mod tests {
         system.inc_block_number();
         assert_eq!(system.block_number(), 4);
     }
+    
 }

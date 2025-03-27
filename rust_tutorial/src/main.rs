@@ -12,4 +12,6 @@ use std::sync::mpsc;
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
-fn main() {}
+fn main() {
+    println!("Hello, world!");
+}
